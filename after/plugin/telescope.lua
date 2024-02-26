@@ -2,7 +2,12 @@ require('telescope').setup{
 	defaults = {
 		file_ignore_patterns = {
 			"node_modules",
-			".git"
+			".git",
+			"%.png",
+			"%.jpeg",
+			"%.jpg",
+			"%.gif",
+			"%.zip",
 		}
 	}
 }
