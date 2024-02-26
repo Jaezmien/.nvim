@@ -40,6 +40,10 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	use {
+		'itchyny/lightline.vim'
+	}
+
 	-- HIGHLY important
 	use {
 		'tamton-aquib/duck.nvim'
