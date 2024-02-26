@@ -16,13 +16,22 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- ThePrimeagen's greatest remap ever (but now dumbed down)
 vim.keymap.set("x", "p", [["_dP]])
 
--- Leader shortcut for yanking to host clipboard (Windows)
-vim.keymap.set({"n", "v"}, "<leader>y", [["*y]])
-vim.keymap.set("n", "<leader>Y", [["*Y]])
+local uname = vim.loop.os_uname().sysname
+if uname == 'Linux' then
+	-- Leader shortcut for yanking to host clipboard
+	vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+	vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- Leader shortcut for pasting from host clipboard (Windows)
-vim.keymap.set({"n", "v"}, "<leader>p", [["*p]])
-vim.keymap.set("n", "<leader>P", [["*P]])
+	-- Leader shortcut for pasting from host clipboard
+	vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
+	vim.keymap.set("n", "<leader>P", [["+P]])
+else
+	vim.keymap.set({"n", "v"}, "<leader>y", [["*y]])
+	vim.keymap.set("n", "<leader>Y", [["*Y]])
+
+	vim.keymap.set({"n", "v"}, "<leader>p", [["*p]])
+	vim.keymap.set("n", "<leader>P", [["*P]])
+end
 
 -- Shortcut for word replace
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
