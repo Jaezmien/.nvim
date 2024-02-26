@@ -23,3 +23,12 @@ vim.opt.incsearch = true
 
 -- Scrolling
 vim.opt.scrolloff = 8
+
+-- Filetypes
+vim.filetype.add({
+	extension = {
+		hlsl = 'glsl',
+		frag = 'glsl',
+		vert = 'glsl'
+	}
+})
