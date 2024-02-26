@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	-- HIGHLY important
 	use {
 		'tamton-aquib/duck.nvim'
 	}
