@@ -41,7 +41,9 @@ return require('packer').startup(function(use)
 	}
 
 	use {
-		'nvim-treesitter/nvim-treesitter-context'
+		'nvim-treesitter/nvim-treesitter-context',
+		requires = { { 'nvim-treesitter/nvim-treesitter' } }
+	}
 	}
 
 	use {
