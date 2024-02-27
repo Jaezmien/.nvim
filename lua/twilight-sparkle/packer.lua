@@ -65,7 +65,7 @@ return require('packer').startup(function(use)
 	}
 
 	use {
-		'itchyny/lightline.vim'
+		'nvim-lualine/lualine.nvim',
 	}
 
 	-- HIGHLY important
