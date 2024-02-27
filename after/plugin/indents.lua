@@ -1,13 +1,11 @@
+local highlights = { "DashieRed", "DashieOrange", "DashieYellow", "DashieGreen", "DashiePurple" }
 local rainbow = {
-	Dashie01Red = "#EC4141",
-	Dashie02Orange = "#EF7135",
-	Dashie03Yellow = "#FAF5AB",
-	Dashie04Green = "#5FBB4E",
-	Dashie05Purple = "#632E86"
+	DashieRed = "#EC4141",
+	DashieOrange = "#EF7135",
+	DashieYellow = "#FAF5AB",
+	DashieGreen = "#5FBB4E",
+	DashiePurple = "#632E86"
 }
-
-local highlights = {}
-for key, _ in pairs(rainbow) do table.insert(highlights, key) end
 
 local hooks = require('ibl.hooks')
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
