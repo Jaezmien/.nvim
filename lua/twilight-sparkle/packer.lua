@@ -44,6 +44,10 @@ return require('packer').startup(function(use)
 		'nvim-treesitter/nvim-treesitter-context',
 		requires = { { 'nvim-treesitter/nvim-treesitter' } }
 	}
+	use {
+		'windwp/nvim-ts-autotag',
+		requires = { { 'nvim-treesitter/nvim-treesitter' } }
+	}
 	}
 
 	use {
