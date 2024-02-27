@@ -41,6 +41,14 @@ return require('packer').startup(function(use)
 	}
 
 	use {
+		'lukas-reineke/indent-blankline.nvim',
+		as = 'ibl'
+	}
+	use {
+		'HiPhish/rainbow-delimiters.nvim'
+	}
+
+	use {
 		'nvim-treesitter/nvim-treesitter-context',
 		requires = { { 'nvim-treesitter/nvim-treesitter' } }
 	}

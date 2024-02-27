@@ -14,8 +14,8 @@ vim.opt.backup = false
 vim.opt.swapfile = false
 
 -- Visualizing indents
-vim.opt.list = true
-vim.opt.listchars = "tab:» ,trail:·,extends:»,precedes:«"
+-- vim.opt.list = true
+-- vim.opt.listchars = "tab:» ,trail:·,extends:»,precedes:«"
 
 -- Unfuckup search highlighting
 vim.opt.hlsearch = false
