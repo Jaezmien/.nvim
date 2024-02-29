@@ -59,4 +59,11 @@ return require('lazy').setup({
 		config = function() require('nvim-autopairs').setup{} end,
 	},
 	{ 'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup{} end, },
+
+	-- I just think they're neat
+	{ 'folke/zen-mode.nvim' },
+	{
+		'folke/twilight.nvim',
+		dependencies = { 'folke/zen-mode.nvim' }
+	}
 })
