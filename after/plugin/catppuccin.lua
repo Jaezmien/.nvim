@@ -1,6 +1,12 @@
 require('catppuccin').setup({
 	flavor = "mocha",
-	-- transparent_background = true,
+	integrations = {
+		mason = true,
+		treesitter = true,
+		telescope = {
+			enabled = true
+		}
+	}
 })
 
 function SetupCatppuccin()
