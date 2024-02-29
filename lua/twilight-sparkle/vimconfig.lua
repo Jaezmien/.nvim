@@ -32,3 +32,6 @@ vim.filetype.add({
 		vert = 'glsl'
 	}
 })
+
+-- Colors!
+vim.opt.termguicolors = true
