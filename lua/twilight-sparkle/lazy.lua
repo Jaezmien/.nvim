@@ -49,6 +49,10 @@ return require('lazy').setup({
 
 	-- QOL
 	{ 'numToStr/Comment.nvim', },
+	{
+		'kylechui/nvim-surround',
+		event = 'VeryLazy',
+	},
 
 	-- Pretty Visuals
 	{ 'lukas-reineke/indent-blankline.nvim', name = 'ibl' },
