@@ -63,6 +63,11 @@ return require('lazy').setup({
 		event = 'VeryLazy',
 		config = function() require('nvim-surround').setup{} end,
 	},
+	{
+		"kdheepak/lazygit.nvim",
+		cmd = { "LazyGit" },
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 
 	-- Pretty Visuals
 	{ 'lukas-reineke/indent-blankline.nvim', name = 'ibl' },
