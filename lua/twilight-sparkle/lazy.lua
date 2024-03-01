@@ -53,6 +53,12 @@ return require('lazy').setup({
 		end
 	},
 
+	-- Linter & Formatter
+	{
+		'nvimtools/none-ls.nvim',
+		dependencies = { 'nvim-lua/plenary.nvim' },
+	},
+
 	-- QOL
 	{
 		'numToStr/Comment.nvim',
