@@ -63,6 +63,11 @@ return require('lazy').setup({
 		config = function() require('nvim-autopairs').setup{} end,
 	},
 	{ 'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup{} end, },
+	{
+		'folke/todo-comments.nvim',
+		dependencies = { 'nvim-lua/plenary.nvim' },
+		config = function() require('todo-comments').setup{} end,
+	},
 
 	-- I just think they're neat
 	{ 'folke/zen-mode.nvim' },
