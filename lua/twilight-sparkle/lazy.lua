@@ -45,13 +45,23 @@ return require('lazy').setup({
 	},
 	-- LSP-related (Visual)
 	{ 'nvim-treesitter/nvim-treesitter-context', dependencies = { { 'nvim-treesitter/nvim-treesitter' } } }, -- Shows the current code context
-	{ 'windwp/nvim-ts-autotag', dependencies = { { 'nvim-treesitter/nvim-treesitter' } } },
+	{
+		'windwp/nvim-ts-autotag',
+		dependencies = { { 'nvim-treesitter/nvim-treesitter' } },
+		config = function()
+			require('nvim-ts-autotag').setup{ autotag = { enable = true } }
+		end
+	},
 
 	-- QOL
-	{ 'numToStr/Comment.nvim', },
+	{
+		'numToStr/Comment.nvim',
+		config = function() require('Comment').setup{} end,
+	},
 	{
 		'kylechui/nvim-surround',
 		event = 'VeryLazy',
+		config = function() require('nvim-surround').setup{} end,
 	},
 
 	-- Pretty Visuals
