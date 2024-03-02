@@ -5,14 +5,30 @@ lsp.preset('recommended')
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 cmp.setup({
+	preselect = 'item',
+	completion = {
+		completeopt = 'menu,menuone,noinsert',
+		keyword_length = 0
+	},
+	sources = {
+		{ name = 'treesitter' },
+		{ name = 'nvim_lsp' },
+		{ name = 'buffer' },
+		{ name = 'luasnip' },
+	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
 		['<C-y>'] = cmp.mapping.confirm({ select = true }),
 		["<C-Space>"] = cmp.mapping.complete(),
 		['<Tab>'] = nil,
-		['<S-Tab>'] = nil
-	})
+		['<S-Tab>'] = nil,
+	}),
+	snippet = {
+		expand = function(args)
+			require('luasnip').lsp_expand(args.body)
+		end
+	}
 })
 
 lsp.set_preferences({
