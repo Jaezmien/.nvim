@@ -21,8 +21,12 @@ cmp.setup({
 		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
 		['<C-y>'] = cmp.mapping.confirm({ select = true }),
 		["<C-i>"] = cmp.mapping.complete(),
-		['<Tab>'] = nil,
-		['<S-Tab>'] = nil,
+		["<Tab>"] = cmp.mapping(
+			function (fallback)
+				fallback()
+			end, { "i", "s" }
+		),
+		["<S-Tab>"] = nil,
 	}),
 	snippet = {
 		expand = function(args)
