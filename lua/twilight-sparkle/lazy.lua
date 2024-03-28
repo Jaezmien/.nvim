@@ -83,7 +83,7 @@ return require('lazy').setup({
 		event = "InsertEnter",
 		config = function() require('nvim-autopairs').setup{} end,
 	},
-	{ 'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup{} end, },
+	{ 'NvChad/nvim-colorizer.lua' },
 	{
 		'folke/todo-comments.nvim',
 		dependencies = { 'nvim-lua/plenary.nvim' },
