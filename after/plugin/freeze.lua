@@ -5,7 +5,7 @@ require('charm-freeze').setup({
 	end,
 	theme = "catppuccin-mocha",
 	window = true,
-	line_numbers = true
+	show_line_numbers = true
 })
 
 vim.keymap.set('v', '<leader>sc', '<cmd>Freeze<cr>')

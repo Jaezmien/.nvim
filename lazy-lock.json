@@ -2,7 +2,7 @@
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "f3b3d3446bcbfa62d638b1903ff00a78b2b730a1" },
   "catppuccin": { "branch": "main", "commit": "c0de3b46811fe1ce3912e2245a9dfbea6b41c300" },
-  "charm-freeze.nvim": { "branch": "main", "commit": "8db459e84e6c642707a6bc41154a3f51723f9a0a" },
+  "charm-freeze.nvim": { "branch": "main", "commit": "b4c80e67e8a9fc525bd10633d04b5bfca2f2862e" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
   "duck.nvim": { "branch": "main", "commit": "0ca969d549f5d546ae395e163130024b51694235" },
   "ibl": { "branch": "master", "commit": "821a7acd88587d966f7e464b0b3031dfe7f5680c" },
