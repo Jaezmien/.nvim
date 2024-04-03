@@ -96,16 +96,5 @@ return require('lazy').setup({
 		'folke/twilight.nvim',
 		dependencies = { 'folke/zen-mode.nvim' }
 	},
-	{
-		"michaelrommel/nvim-silicon",
-		lazy = true,
-		cmd = "Silicon",
-		config = function()
-			require("silicon").setup({
-				font = "ProggyClean Nerd Font Mono=34",
-				theme = "Dracula",
-				background = "#11111b",
-			})
-		end
-	},
+	{ 'isabelroses/charm-freeze.nvim' },
 })
