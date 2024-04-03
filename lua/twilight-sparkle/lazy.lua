@@ -96,5 +96,5 @@ return require('lazy').setup({
 		'folke/twilight.nvim',
 		dependencies = { 'folke/zen-mode.nvim' }
 	},
-	{ 'isabelroses/charm-freeze.nvim' },
+	{ 'Jaezmien/charm-freeze.nvim' }
 })
