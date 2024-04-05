@@ -103,5 +103,13 @@ return require('lazy').setup({
 		'folke/twilight.nvim',
 		dependencies = { 'folke/zen-mode.nvim' }
 	},
-	{ 'isabelroses/charm-freeze.nvim' }
+	{ 'isabelroses/charm-freeze.nvim' },
+	{
+		'folke/which-key.nvim',
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+	}
 })

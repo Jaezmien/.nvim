@@ -6,4 +6,4 @@ require('nvim-tree').setup({
 	}
 })
 
-vim.keymap.set("n", "<leader>pv", '<cmd>NvimTreeFindFile<CR>')
+vim.keymap.set("n", "<leader>pv", '<cmd>NvimTreeFindFile<CR>', { desc = "[P]roject [V]iew" })

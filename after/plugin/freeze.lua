@@ -8,4 +8,4 @@ require('charm-freeze').setup({
 	show_line_numbers = true
 })
 
-vim.keymap.set('v', '<leader>sc', '<cmd>Freeze<cr>')
+vim.keymap.set('v', '<leader>sc', '<cmd>Freeze<cr>', { desc = "[S]creenshot [C]ode" })
