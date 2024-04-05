@@ -75,6 +75,13 @@ return require('lazy').setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
+	-- File Explorer
+	{ 'nvim-tree/nvim-tree.lua' },
+	{
+		'nvim-tree/nvim-web-devicons',
+		dependencies = { 'nvim-tree/nvim-tree.lua' }
+	},
+
 	-- Pretty Visuals
 	{ 'lukas-reineke/indent-blankline.nvim', name = 'ibl' },
 	{ 'HiPhish/rainbow-delimiters.nvim' },

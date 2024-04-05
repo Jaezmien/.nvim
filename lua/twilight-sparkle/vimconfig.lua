@@ -31,3 +31,7 @@ vim.filetype.add({
 
 -- Colors!
 vim.opt.termguicolors = true
+
+-- Disabling NetRW
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
