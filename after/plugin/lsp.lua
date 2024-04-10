@@ -91,3 +91,21 @@ lsp.setup()
 vim.diagnostic.config({
 	virtual_text = true
 })
+
+-- Ensure you have @vue/language-server installed with `npm i -g @vue/language-server`
+
+local mason_registry = require('mason-registry')
+local ts_plugin_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin'
+require('lspconfig').tsserver.setup({
+	init_options = {
+		plugins = {
+			{
+				name = "@vue/typescript-plugin",
+				location = ts_plugin_path,
+				languages = { 'vue' }
+			}
+		}
+	},
+	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+})
+require('lspconfig').volar.setup({})
