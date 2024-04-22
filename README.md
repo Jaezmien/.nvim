@@ -3,7 +3,7 @@
 
 ## Pre-requisites
 
-- Font: ProggyClean Nerd Font Mono (12)
+- Font: JetbrainsMono Nerd Font (10)
 
 - [silicon](https://github.com/Aloxaf/silicon)
 

@@ -7,7 +7,8 @@ require('charm-freeze').setup({
 	window = true,
 	show_line_numbers = true,
 	font = {
-		family = "ProggyClean Nerd Font Mono"
+		family = "JetbrainsMono Nerd Font",
+		size = 10
 	}
 })
 
