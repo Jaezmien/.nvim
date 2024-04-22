@@ -12,4 +12,12 @@ require('nvim-tree').setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>pv", '<cmd>NvimTreeFindFile<CR>', { desc = "[P]roject [V]iew" })
+local api = require('nvim-tree.api')
+vim.keymap.set("n", "<leader>pv", function()
+	if api.tree.is_visible() then
+		api.tree.close()
+	else
+		api.tree.open()
+		api.tree.find_file()
+	end
+end, { desc = "[P]roject [V]iew" })
