@@ -77,6 +77,7 @@ return require('lazy').setup({
 		cmd = { "LazyGit" },
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	{ 'rmagatti/auto-session' },
 
 	-- File Explorer
 	{ 'nvim-tree/nvim-tree.lua' },
