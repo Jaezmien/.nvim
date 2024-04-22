@@ -115,5 +115,14 @@ return require('lazy').setup({
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 		end,
-	}
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && yarn install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
 })
