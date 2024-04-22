@@ -109,3 +109,13 @@ require('lspconfig').tsserver.setup({
 	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 })
 require('lspconfig').volar.setup({})
+
+-- JSON Schema
+require('lspconfig').jsonls.setup({
+	settings = {
+		json = {
+			schemas = require('schemastore').json.schemas(),
+			validate = { enable = true }
+		}
+	}
+})
