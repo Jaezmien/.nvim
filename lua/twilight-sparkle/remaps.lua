@@ -45,3 +45,14 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set('n', '<leader>wv', '<C-W>s<C-w>j', { desc = "[W]indow Split [V]ertical"})
 vim.keymap.set('n', '<leader>w<S-v>', '<C-W>v<C-w>l', { desc = "[W]indow Split [H]orizontal"})
 vim.keymap.set('n', '<leader>wq', '<C-W>q', { desc = "[W]indow [Q]uit"})
+
+-- Wrap toggle
+vim.keymap.set('n', '<leader>tw', function()
+	if vim.o.wrap == false then
+		vim.opt.wrap = true
+		vim.opt.linebreak = true
+	else
+		vim.opt.wrap = false
+		vim.opt.linebreak = false
+	end
+end, { desc = "[T]oggle [W]rap" })
