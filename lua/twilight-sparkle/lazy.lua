@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
 	-- REALLY (not) Important
-	{ "catppuccin/nvim", name = "catppuccin" },
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ 'tamton-aquib/duck.nvim' },
 
 	-- Status Line
@@ -63,14 +63,10 @@ return require('lazy').setup({
 	},
 
 	-- QOL
-	{
-		'numToStr/Comment.nvim',
-		config = function() require('Comment').setup{} end,
-	},
+	{ 'numToStr/Comment.nvim', },
 	{
 		'kylechui/nvim-surround',
 		event = 'VeryLazy',
-		config = function() require('nvim-surround').setup{} end,
 	},
 	{
 		"kdheepak/lazygit.nvim",
@@ -92,13 +88,11 @@ return require('lazy').setup({
 	{
 		'windwp/nvim-autopairs',
 		event = "InsertEnter",
-		config = function() require('nvim-autopairs').setup{} end,
 	},
 	{ 'NvChad/nvim-colorizer.lua' },
 	{
 		'folke/todo-comments.nvim',
 		dependencies = { 'nvim-lua/plenary.nvim' },
-		config = function() require('todo-comments').setup{} end,
 	},
 
 	-- I just think they're neat
