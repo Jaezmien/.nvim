@@ -13,7 +13,8 @@ return  {
 				}),
 			}
 		}
-
+	end,
+	init = function()
 		vim.keymap.set('n', '<leader>ff', function()
 			vim.lsp.buf.format()
 			vim.cmd('w')
