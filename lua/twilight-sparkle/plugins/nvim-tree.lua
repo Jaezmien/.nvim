@@ -13,6 +13,11 @@ return {
 			view = {
 				width = 35,
 			},
+			filters = {
+				custom = {
+					"^.git$"
+				}
+			}
 		},
 		init = function()
 
