@@ -34,8 +34,8 @@ end
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[S]ubstitute word"})
 
 -- It's enough
-vim.keymap.set("n", "<leader>bp", ":bp<CR>", { desc = "Move [B]uffer [P]revious" })
-vim.keymap.set("n", "<leader>bn", ":bn<CR>", { desc = "Move [B]uffer [N]ext" })
+vim.keymap.set("n", "<leader>bp", "<C-O>", { desc = "Move To Previous Opened File" })
+vim.keymap.set("n", "<leader>bn", "<C-I>", { desc = "Move To Next Opened File" })
 
 -- Window custom keybinds
 vim.keymap.set("n", "<C-h>", "10<C-w>h")
