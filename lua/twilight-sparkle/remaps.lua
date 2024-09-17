@@ -38,10 +38,10 @@ vim.keymap.set("n", "<leader>bp", "<C-O>", { desc = "Move To Previous Opened Fil
 vim.keymap.set("n", "<leader>bn", "<C-I>", { desc = "Move To Next Opened File" })
 
 -- Window custom keybinds
-vim.keymap.set("n", "<C-h>", "10<C-w>h")
-vim.keymap.set("n", "<C-j>", "10<C-w>j")
-vim.keymap.set("n", "<C-k>", "10<C-w>k")
-vim.keymap.set("n", "<C-l>", "10<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set('n', '<leader>wv', '<C-W>s<C-w>j', { desc = "[W]indow Split [V]ertical"})
 vim.keymap.set('n', '<leader>w<S-v>', '<C-W>v<C-w>l', { desc = "[W]indow Split [H]orizontal"})
 vim.keymap.set('n', '<leader>wq', '<C-W>q', { desc = "[W]indow [Q]uit"})
