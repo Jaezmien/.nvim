@@ -6,7 +6,6 @@ return {
 		config = function(_, opts)
 			require('dap-go').setup(opts)
 
-			vim.keymap.set('n', "<leader>dtp", ":DapToggleBreakpoint<CR>", { desc = "[D]ebugger [T]oggle [B]reakpoint" })
 			-- vim.keymap.set('n', "<leader>dsp", function()
 			-- 	local widgets = require('dap.ui.widgets')
 			-- 	local sidebar = widgets.sidebar(widgets.scopes)
