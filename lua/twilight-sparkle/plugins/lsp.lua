@@ -10,7 +10,7 @@ return {
 		dependencies = { 'williamboman/mason.nvim' },
 		lazy = false,
 		opts = {
-			ensure_installed = { 'tsserver', 'lua_ls', 'html' },
+			ensure_installed = { 'ts_ls', 'lua_ls', 'html' },
 		},
 		config = true,
 	},
@@ -34,12 +34,12 @@ return {
 						capabilities = capabilities
 					})
 				end,
-				['tsserver'] = function()
+				['ts_ls'] = function()
 					-- XXX: Ensure you have @vue/language-server installed with `npm i -g @vue/language-server`
 					local mason_registry = require('mason-registry')
 					local ts_plugin_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
 						'/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin'
-					lspconfig.tsserver.setup({
+					lspconfig.ts_ls.setup({
 						capabilities = capabilities,
 
 						init_options = {
@@ -49,10 +49,13 @@ return {
 									location = ts_plugin_path,
 									languages = { 'vue' }
 								}
-							}
+							},
 						},
 						filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 					})
+				end,
+				['volar'] = function()
+					lspconfig.volar.setup({})
 				end,
 				['jsonls'] = function()
 					lspconfig.jsonls.setup({
