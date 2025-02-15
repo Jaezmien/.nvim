@@ -16,8 +16,6 @@ return {
 	end,
 	init = function()
 		vim.keymap.set('n', '<leader>ff', function()
-			vim.lsp.buf.format()
-
 			-- XXX: What???
 			local js = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' }
 			if vim.tbl_contains(js, vim.bo.filetype) then
@@ -26,7 +24,9 @@ return {
 				end
 			end
 
-			vim.cmd('w')
+			vim.lsp.buf.format()
+
+			vim.cmd(':w')
 		end, { desc = "[F]ormat [F]ile" })
 	end,
 }
