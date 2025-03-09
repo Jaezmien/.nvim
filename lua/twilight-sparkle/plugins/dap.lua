@@ -26,9 +26,10 @@ return {
 			vim.keymap.set('n', "<leader>drl", function() require('dap').run_last() end, { desc = "[D]ebugger [R]un [L]ast" })
 
 			vim.keymap.set('n', "<leader>dbc", function() require('dap').continue() end, { desc = "[D]e[B]ugger [C]ontinue" })
-			vim.keymap.set('n', "<leader>dbo", function() require('dap').step_over() end, { desc = "[D]e[B]ugger Step [O]ver" })
+			vim.keymap.set('n', "<leader>dbn", function() require('dap').step_over() end, { desc = "[D]e[B]ugger Step [N]next" })
 			vim.keymap.set('n', "<leader>dbi", function() require('dap').step_into() end, { desc = "[D]e[B]ugger Step [I]nto" })
-			vim.keymap.set('n', "<leader>dbx", function() require('dap').step_out() end, { desc = "[D]e[B]ugger Step E[x]it" })
+			vim.keymap.set('n', "<leader>dbo", function() require('dap').step_out() end, { desc = "[D]e[B]ugger Step [O]ut" })
+			-- vim.keymap.set('n', "<leader>dbx", function() require('dap').step_out() end, { desc = "[D]e[B]ugger Step E[x]it" })
 
 			vim.keymap.set('n', "<leader>dbr", function() require('dap').restart() end, { desc = "[D]e[B]ugger [R]estart" })
 			vim.keymap.set('n', "<leader>dbt", function() require('dap').terminate() end, { desc = "[D]e[B]ugger [T]erminate" })
