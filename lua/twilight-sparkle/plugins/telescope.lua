@@ -21,6 +21,7 @@ return {
 
 			vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "[P]roject [F]ind Files" })
 			vim.keymap.set('n', '<leader>ps', builtin.treesitter, { desc = "[P]roject Tree[S]itter" })
+			vim.keymap.set('n', '<leader>ts', builtin.lsp_document_symbols, { desc = "Project [T]ree[S]itter" })
 			vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = "[G]it [F]ind" })
 			vim.keymap.set('n', '<leader>pg', function()
 				builtin.grep_string({ search = vim.fn.input("Grep > ") })
