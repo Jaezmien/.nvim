@@ -43,7 +43,12 @@ return {
 					additional_vim_regex_highlighting = false,
 				}
 			})
-		end
+		end,
+		init = function()
+			vim.opt.foldmethod = "expr"
+			vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+			vim.opt.foldlevelstart = 2
+		end,
 	},
 
 	 -- Shows the current code context
