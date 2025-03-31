@@ -22,6 +22,8 @@ return {
 
 			-- JSON Schemas
 			'b0o/schemastore.nvim',
+
+			'ray-x/lsp_signature.nvim'
 		},
 		lazy = false,
 		config = function()
@@ -114,5 +116,35 @@ return {
 			vim.fn.sign_define('DiagnosticSignInfo', { text = '?', texthl = 'DiagnosticSignInfo' })
 			vim.fn.sign_define('DiagnosticSignHint', { text = 'H', texthl = 'DiagnosticSignHint' })
 		end
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
+		opts = {
+			bind = true,
+			always_trigger = true,
+			doc_lines = 0,
+
+			floating_window = true,
+			floating_window_off_x = 0,
+			floating_window_off_y = 0,
+			-- fix_pos = true,
+
+			hint_enable = true,
+			hint_prefix = " ",
+
+			handle_opts = {
+				border = "rounded"
+			},
+		},
+		init = function()
+			vim.keymap.set('n', '<Leader>k', function()
+				vim.lsp.buf.signature_help()
+			end, { silent = true, noremap = true, desc = 'Toggle Signature' })
+			vim.keymap.set('i', '<C-k>', function()
+				-- vim.lsp.buf.signature_help()
+				require('lsp_signature').toggle_float_win()
+			end, { silent = true, noremap = true, desc = 'Toggle Signature' })
+		end,
 	}
 }
