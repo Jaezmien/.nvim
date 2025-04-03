@@ -61,3 +61,6 @@ vim.keymap.set('n', '<leader>tw', function()
 		vim.opt.linebreak = false
 	end
 end, { desc = "[T]oggle [W]rap" })
+
+-- Open all folds under cursor
+vim.keymap.set('n', '<leader>za', 'zczA')
