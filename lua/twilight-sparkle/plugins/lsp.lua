@@ -125,7 +125,7 @@ return {
 			always_trigger = true,
 			doc_lines = 0,
 
-			floating_window = true,
+			floating_window = false,
 			floating_window_off_x = 0,
 			floating_window_off_y = 0,
 			-- fix_pos = true,
