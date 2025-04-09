@@ -2,7 +2,10 @@ return {
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.5',
-		dependencies = { { 'nvim-lua/plenary.nvim' } },
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			'nvim-telescope/telescope-fzf-native.nvim'
+		},
 		opts = {
 			defaults = {
 				file_ignore_patterns = {
@@ -28,6 +31,10 @@ return {
 			end, { desc = "[P]roject [G]rep" })
 			vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "[V]iew [H]elp" })
 		end,
+	},
+	{
+		'nvim-telescope/telescope-fzf-native.nvim',
+		build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release'
 	},
 	{
 		'stevearc/dressing.nvim',
