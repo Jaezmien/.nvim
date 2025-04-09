@@ -1,0 +1,8 @@
+;extends
+
+; css`...`
+(call_expression
+	function: ((identifier) @_name (#eq? @_name "html"))
+	arguments: ((template_string) @html
+		(#offset! @html 0 1 0 -1))
+)
