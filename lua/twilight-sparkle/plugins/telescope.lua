@@ -22,7 +22,7 @@ return {
 		init = function()
 			local builtin = require('telescope.builtin')
 
-			vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "[P]roject [F]ind Files" })
+			vim.keymap.set('n', '<leader>pf', function() builtin.find_files({ previewer = false }) end, { desc = "[P]roject [F]ind Files" })
 			vim.keymap.set('n', '<leader>ps', builtin.treesitter, { desc = "[P]roject Tree[S]itter" })
 			vim.keymap.set('n', '<leader>ts', builtin.lsp_document_symbols, { desc = "Project [T]ree[S]itter" })
 			vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = "[G]it [F]ind" })
