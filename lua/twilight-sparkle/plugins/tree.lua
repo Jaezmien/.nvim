@@ -12,6 +12,7 @@ return {
 			},
 			view = {
 				width = 35,
+				side = "right",
 			},
 			filters = {
 				custom = {
