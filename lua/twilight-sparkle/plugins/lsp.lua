@@ -27,49 +27,19 @@ return {
 		},
 		lazy = false,
 		config = function()
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
-			local lspconfig = require('lspconfig')
-
-			require('mason-lspconfig').setup_handlers({
-				function(server_name)
-					lspconfig[server_name].setup({
-						capabilities = capabilities
-					})
-				end,
-				['ts_ls'] = function()
-					-- XXX: Ensure you have @vue/language-server installed with `npm i -g @vue/language-server`
-					local mason_registry = require('mason-registry')
-					local ts_plugin_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
-						'/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin'
-					lspconfig.ts_ls.setup({
-						capabilities = capabilities,
-
-						init_options = {
-							plugins = {
-								{
-									name = "@vue/typescript-plugin",
-									location = ts_plugin_path,
-									languages = { 'vue' }
-								}
-							},
-						},
-						filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-					})
-				end,
-				['volar'] = function()
-					lspconfig.volar.setup({})
-				end,
-				['jsonls'] = function()
-					lspconfig.jsonls.setup({
-						settings = {
-							json = {
-								schemas = require('schemastore').json.schemas(),
-								validate = { enable = true }
-							}
-						}
-					})
-				end,
+			vim.lsp.config('volar', {})
+			vim.lsp.config('jsonls', {
+				settings = {
+					json = {
+						schemas = require('schemastore').json.schemas(),
+						validate = { enable = true }
+					}
+				}
 			})
+
+			require('mason-lspconfig').setup {
+				ensure_installed = { 'ts_ls', 'lua_ls', 'html' },
+			}
 		end,
 		init = function()
 			vim.api.nvim_create_autocmd('LspAttach', {
@@ -108,6 +78,20 @@ return {
 
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts({ desc = "Show Symbol Information" }))
 					vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts({ desc = "Show Code Signature" }))
+
+					vim.keymap.set('n', '<leader>ff', function()
+						-- XXX: What???
+						-- local js = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' }
+						-- if vim.tbl_contains(js, vim.bo.filetype) then
+						-- 	for _, action in ipairs({'source.removeUnusedImports', 'source.addMissingImports'}) do
+						-- 		vim.lsp.buf.code_action({ apply = true, context = { only = { action } } })
+						-- 	end
+						-- end
+
+						vim.lsp.buf.format()
+
+						vim.cmd(':w')
+					end, { desc = "[F]ormat [F]ile" })
 				end,
 			})
 
