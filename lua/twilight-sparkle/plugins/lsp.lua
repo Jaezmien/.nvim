@@ -97,6 +97,15 @@ return {
 
 						vim.cmd(':w')
 					end, { desc = "[F]ormat [F]ile" })
+
+					local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+					vim.api.nvim_create_autocmd('BufWritePre', {
+						group = augroup,
+						buffer = ev.buf,
+						callback = function()
+							vim.lsp.buf.format()
+						end,
+					})
 				end,
 			})
 
