@@ -58,7 +58,12 @@ return {
 
 					vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol,
 						opts({ desc = "[V]iew [W]orkspace [S]ymbol" }))
-					vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts({ desc = "[V]iew [D]iagnostics" }))
+					vim.keymap.set("n", "<leader>vd", "<cmd>Telescope diagnostics<cr>",
+						opts({ desc = "[V]iew [D]iagnostics" }))
+					-- vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts({ desc = "[V]iew [D]iagnostics" }))
+					-- vim.keymap.set("n", "<leader>vd", function()
+					-- 	vim.diagnostic.setqflist({ bufnr = 0, open = true })
+					-- end, opts({ desc = "[V]iew [D]iagnostics" }))
 					vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts({ desc = "Next [D]iagnostic" }))
 					vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts({ desc = "Previous [D]iagnostic]" }))
 
