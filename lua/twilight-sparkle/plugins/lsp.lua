@@ -10,7 +10,7 @@ return {
 		dependencies = { 'williamboman/mason.nvim' },
 		lazy = false,
 		opts = {
-			ensure_installed = { 'ts_ls', 'lua_ls', 'html' },
+			ensure_installed = { 'lua_ls', 'html' },
 		},
 		config = true,
 	},
@@ -27,7 +27,6 @@ return {
 		},
 		lazy = false,
 		config = function()
-			vim.lsp.config('volar', {})
 			vim.lsp.config('jsonls', {
 				settings = {
 					json = {
@@ -37,8 +36,52 @@ return {
 				}
 			})
 
+			-- what the hell
+			do
+				-- vue stuffs
+				local vue_path = vim.fn.expand(
+					'$MASON/packages' ..
+					'/vue-language-server' ..
+					'/node_modules/@vue/language-server'
+				)
+
+				local filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' }
+
+				local vue_plugin = {
+					name = '@vue/typescript-plugin',
+					location = vue_path,
+					languages = { 'vue' },
+					configNamespace = 'typescript',
+				}
+				local vtsls_config = {
+					settings = {
+						vtsls = {
+							tsserver = {
+								globalPlugins = {
+									vue_plugin
+								}
+							}
+						}
+					},
+					filetypes = filetypes
+				}
+				local tsls_config = {
+					init_options = {
+						plugins = {
+							vue_plugin
+						}
+					},
+					filetypes = filetypes
+				}
+
+				vim.lsp.config('vtsls', vtsls_config)
+				vim.lsp.config('ts_ls', tsls_config)
+				vim.lsp.config('vue_ls', {})
+				vim.lsp.enable({ 'ts_ls', 'vue_ls' })
+			end
+
 			require('mason-lspconfig').setup {
-				ensure_installed = { 'ts_ls', 'lua_ls', 'html' },
+				ensure_installed = { 'lua_ls', 'html' },
 			}
 		end,
 		init = function()
