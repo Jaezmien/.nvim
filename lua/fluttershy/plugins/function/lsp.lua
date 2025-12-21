@@ -79,10 +79,6 @@ return {
 				vim.lsp.config('vue_ls', {})
 				vim.lsp.enable({ 'ts_ls', 'vue_ls' })
 			end
-
-			require('mason-lspconfig').setup {
-				ensure_installed = { 'lua_ls', 'html' },
-			}
 		end,
 		init = function()
 			vim.api.nvim_create_autocmd('LspAttach', {
@@ -200,7 +196,6 @@ return {
 				debug = true,
 				sources = {
 					null.builtins.formatting.prettier,
-
 				}
 			}
 		end,
