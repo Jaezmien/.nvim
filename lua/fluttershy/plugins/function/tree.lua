@@ -1,6 +1,23 @@
 return {
 	{
 		'nvim-tree/nvim-tree.lua',
+		lazy = true,
+		keys = {
+			{
+				"<leader>pv",
+				function()
+					local api = require('nvim-tree.api')
+					if api.tree.is_visible() then
+						api.tree.close()
+					else
+						api.tree.open()
+						api.tree.find_file()
+					end
+				end,
+				mode = "n",
+				desc = "[P]roject [V]iew",
+			}
+		},
 		cmd = { "NvimTreeToggle", "NvimTreeOpen" },
 		opts = {
 			disable_netrw = true,
@@ -25,24 +42,11 @@ return {
 				}
 			}
 		},
-		init = function()
-
-			local api = require('nvim-tree.api')
-			vim.keymap.set("n", "<leader>pv", function()
-				if api.tree.is_visible() then
-					api.tree.close()
-				else
-					api.tree.open()
-					api.tree.find_file()
-				end
-			end, { desc = "[P]roject [V]iew" })
-
-		end,
 	},
 	{
 		'nvim-tree/nvim-web-devicons',
 		dependencies = { 'nvim-tree/nvim-tree.lua' },
-		cmd = { "NvimTreeToggle" , "NvimTreeOpen" },
+		cmd = { "NvimTreeToggle", "NvimTreeOpen" },
 		opts = {
 			strict = true,
 			override_by_extension = {
