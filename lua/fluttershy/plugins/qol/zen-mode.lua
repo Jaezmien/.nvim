@@ -8,7 +8,7 @@ return {
 	},
 	{
 		'folke/twilight.nvim',
-		event = "VeryLazy",
+		lazy = true,
 		dependencies = {
 			-- Optional
 			'folke/zen-mode.nvim'
