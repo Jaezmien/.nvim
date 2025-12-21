@@ -136,9 +136,9 @@ return {
 						-- 	end
 						-- end
 
-						vim.lsp.buf.format()
-
-						vim.cmd(':w')
+						vim.lsp.buf.format({
+							filter = function(c) return c.name == "null-ls" end
+						})
 					end, { desc = "[F]ormat [F]ile" })
 
 					local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -146,7 +146,9 @@ return {
 						group = augroup,
 						buffer = ev.buf,
 						callback = function()
-							vim.lsp.buf.format()
+							vim.lsp.buf.format({
+								filter = function(c) return c.name == "null-ls" end
+							})
 						end,
 					})
 				end,
@@ -186,6 +188,21 @@ return {
 				-- vim.lsp.buf.signature_help()
 				require('lsp_signature').toggle_float_win()
 			end, { silent = true, noremap = true, desc = 'Toggle Signature' })
+		end,
+	},
+	{
+		'nvimtools/none-ls.nvim',
+		dependencies = { 'nvim-lua/plenary.nvim' },
+		config = function()
+			local null = require('null-ls')
+
+			null.setup {
+				debug = true,
+				sources = {
+					null.builtins.formatting.prettier,
+
+				}
+			}
 		end,
 	}
 }
