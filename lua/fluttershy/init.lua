@@ -2,6 +2,9 @@
 require("fluttershy.vimconfig")
 require("fluttershy.remaps")
 
+--+ Neovide config +--
+require("fluttershy.neovide")
+
 --+ Initialize lazy.nvim +--
 require("fluttershy.lazy")
 
