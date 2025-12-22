@@ -91,7 +91,6 @@ local player = PLAYER_PAPLAY
 
 local soundPath = vim.fn.expand("~/.animalese")
 if not vim.uv.fs_stat(soundPath) then
-	vim.notify("Animalese plugin disabled.")
 	return
 end
 if player == PLAYER_PAPLAY and not vim.fn.executable("paplay") then
