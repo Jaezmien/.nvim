@@ -15,7 +15,7 @@ return {
 				"<C-k>", function()
 					require('lsp_signature').toggle_float_win()
 				end,
-				mode = "n",
+				mode = "i",
 				desc = "Toggle Signature",
 				silent = true,
 				noremap = true,
