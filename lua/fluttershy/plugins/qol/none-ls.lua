@@ -16,7 +16,7 @@ return {
 			null.setup {
 				debug = true,
 				sources = {
-					null.builtins.formatting.prettier,
+					null.builtins.formatting.prettierd,
 				}
 			}
 		end,
