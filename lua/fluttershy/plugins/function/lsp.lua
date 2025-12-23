@@ -25,61 +25,6 @@ return {
 
 			'ray-x/lsp_signature.nvim'
 		},
-		lazy = false,
-		config = function()
-			vim.lsp.config('jsonls', {
-				settings = {
-					json = {
-						schemas = require('schemastore').json.schemas(),
-						validate = { enable = true }
-					}
-				}
-			})
-
-			-- what the hell
-			do
-				-- vue stuffs
-				local vue_path = vim.fn.expand(
-					'$MASON/packages' ..
-					'/vue-language-server' ..
-					'/node_modules/@vue/language-server'
-				)
-
-				local filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' }
-
-				local vue_plugin = {
-					name = '@vue/typescript-plugin',
-					location = vue_path,
-					languages = { 'vue' },
-					configNamespace = 'typescript',
-				}
-				local vtsls_config = {
-					settings = {
-						vtsls = {
-							tsserver = {
-								globalPlugins = {
-									vue_plugin
-								}
-							}
-						}
-					},
-					filetypes = filetypes
-				}
-				local tsls_config = {
-					init_options = {
-						plugins = {
-							vue_plugin
-						}
-					},
-					filetypes = filetypes
-				}
-
-				vim.lsp.config('vtsls', vtsls_config)
-				vim.lsp.config('ts_ls', tsls_config)
-				vim.lsp.config('vue_ls', {})
-				vim.lsp.enable({ 'ts_ls', 'vue_ls' })
-			end
-		end,
 		init = function()
 			vim.api.nvim_create_autocmd('LspAttach', {
 				group = vim.api.nvim_create_augroup('UserLspConfig', {}),
