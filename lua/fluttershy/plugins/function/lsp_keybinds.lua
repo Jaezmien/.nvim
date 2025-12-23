@@ -51,18 +51,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help,
 			opts({ desc = "Show Code Signature" }))
-
-		vim.keymap.set('n', '<leader>ff', function()
-			-- XXX: What???
-			-- local js = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' }
-			-- if vim.tbl_contains(js, vim.bo.filetype) then
-			-- 	for _, action in ipairs({'source.removeUnusedImports', 'source.addMissingImports'}) do
-			-- 		vim.lsp.buf.code_action({ apply = true, context = { only = { action } } })
-			-- 	end
-			-- end
-
-			vim.lsp.buf.format()
-		end, { desc = "[F]ormat [F]ile" })
 	end,
 })
 
