@@ -2,10 +2,14 @@ return {
 	{
 		"OXY2DEV/markview.nvim",
 		lazy = false,
-
-		init = function()
-			vim.keymap.set('n', '<leader>mv', '<cmd>Markview toggle<cr>', { desc = "Toggle [M]ark[V]iew" })
-		end,
+		keys = {
+			{
+				"<leader>mv",
+				":Markview toggle<CR>",
+				mode = "n",
+				desc = "Toggle [M]ark[V]iew",
+			},
+		}
 	},
 	{
 		'brianhuster/live-preview.nvim',
@@ -17,9 +21,19 @@ return {
 			-- 'echasnovski/mini.pick',
 			--
 		},
-		init = function()
-			vim.keymap.set('n', '<leader>lps', '<cmd>LivePreview start<cr>', { desc = "[L]ive-[P]review [S]tart" })
-			vim.keymap.set('n', '<leader>lpc', '<cmd>LivePreview close<cr>', { desc = "[L]ive-[P]review [C]lose" })
-		end,
+		keys = {
+			{
+				"<leader>lps",
+				":LivePreview start<CR>",
+				mode = "n",
+				desc = "[L]ive-[P]review [S]tart"
+			},
+			{
+				"<leader>lpc",
+				":LivePreview close<CR>",
+				mode = "n",
+				desc = "[L]ive-[P]review [C]lose"
+			},
+		},
 	}
 }

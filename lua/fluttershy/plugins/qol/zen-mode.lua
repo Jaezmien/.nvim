@@ -2,9 +2,14 @@ return {
 	{
 		'folke/zen-mode.nvim',
 		cmd = { "ZenMode" },
-		init = function()
-			vim.keymap.set({'n', 'v'}, "<leader>zz", ":ZenMode<CR>", { desc = "Toggle [Z]en Mode"})
-		end
+		keys = {
+			{
+				"<leader>zz",
+				":ZenMode<CR>",
+				mode = {"n", "v"},
+				desc = "Toggle [Z]en Mode",
+			}
+		},
 	},
 	{
 		'folke/twilight.nvim',
