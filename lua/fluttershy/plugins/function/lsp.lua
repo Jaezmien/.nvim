@@ -1,11 +1,5 @@
 return {
 	{
-		'williamboman/mason.nvim',
-		cmd = { "Mason", "MasonLog" },
-		opts = {},
-		config = true,
-	},
-	{
 		'williamboman/mason-lspconfig.nvim',
 		dependencies = { 'williamboman/mason.nvim' },
 		opts = {},
