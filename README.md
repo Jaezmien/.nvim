@@ -1,6 +1,6 @@
 # cow.nvim
 
-![Screenshot](./screenshots/neovide.png)
+![Screenshot](./screenshots/screenshot.png)
 
 ## Pre-requisites
 
