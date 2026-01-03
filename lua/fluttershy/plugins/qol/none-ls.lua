@@ -17,6 +17,9 @@ return {
 				debug = true,
 				sources = {
 					null.builtins.formatting.prettierd,
+					null.builtins.formatting.clang_format.with({
+						extra_args = { [[--style=WebKit]] }
+					})
 				}
 			}
 		end,
