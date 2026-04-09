@@ -102,6 +102,15 @@ if player == PLAYER_FFPLAY and vim.fn.executable("ffplay") == 0 then
 	return
 end
 
+local muted = false
+vim.api.nvim_create_user_command(
+	"AnimaleseMute",
+	function(opts)
+		muted = opts.args == "true"
+	end,
+	{ desc = "Mute Animalese", nargs='?' }
+)
+
 local function getPlayerCommand(char, volume, pitch)
 	if not volume then volume = 0.5 end
 	if not pitch then pitch = 1.0 end
@@ -130,8 +139,12 @@ local function getPlayerCommand(char, volume, pitch)
 	return {}
 end
 
+local disabled = false
 vim.api.nvim_create_autocmd('InsertCharPre', {
 	callback = function()
+		if disabled then return end
+		if muted then return end
+
 		local char = vim.v.char
 		local tchar = translate[char] or "default"
 
@@ -153,6 +166,8 @@ vim.api.nvim_create_autocmd('InsertCharPre', {
 					"audio player returned error code " .. tostring(c),
 					vim.log.levels.WARN
 				)
+
+				disabled = true
 			end
 		)
 	end,
