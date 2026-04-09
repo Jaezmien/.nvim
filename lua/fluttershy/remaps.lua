@@ -67,7 +67,7 @@ vim.keymap.set('n', '<leader>za', 'zczA')
 
 -- Move between tabs
 vim.keymap.set('n', '<leader>tc', ':tabnew<CR>', { desc = "[T]ab [C]reate" })
-vim.keymap.set('n', '<leader>td', ':tabnclose<CR>', { desc = "[T]ab [D]elete" })
+vim.keymap.set('n', '<leader>td', ':tabclose<CR>', { desc = "[T]ab [D]elete" })
 vim.keymap.set('n', '<leader>tn', ':tabn<CR>', { desc = "[T]ab [N]ext" })
 vim.keymap.set('n', '<leader>tp', ':tabp<CR>', { desc = "[T]ab [P]revious" })
 vim.keymap.set('n', '<TAB>', ':tabn<CR>')
