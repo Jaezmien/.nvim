@@ -20,6 +20,11 @@ return {
 				'snacks_dashboard',
 				'snacks_notif',
 				'snacks_win',
+				'text',
+				'notify',
+				'NvimTree',
+				'cmp_menu',
+				'lazygit',
 			}
 
 			local group = vim.api.nvim_create_augroup('NvimTreesitter', { clear = true })
