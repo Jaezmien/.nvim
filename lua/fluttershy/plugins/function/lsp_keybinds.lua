@@ -23,8 +23,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		-- 	vim.diagnostic.setqflist({ bufnr = 0, open = true })
 		-- end, opts({ desc = "[V]iew [D]iagnostics" }))
 
-		vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts({ desc = "Next [D]iagnostic" }))
-		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts({ desc = "Previous [D]iagnostic]" }))
+		vim.keymap.set("n", "]d", function()
+			vim.diagnostic.jump( { count = 1, wrap = true, float=true })
+		end, opts({ desc = "Next [D]iagnostic" }))
+		vim.keymap.set("n", "[d", function()
+			vim.diagnostic.jump( { count = -1, wrap = true, float=true })
+		end, opts({ desc = "Previous [D]iagnostic]" }))
 
 		vim.keymap.set("n", "<leader>vtd",
 			function()
