@@ -24,7 +24,11 @@ return {
 				'notify',
 				'NvimTree',
 				'cmp_menu',
+				'cmp_docs',
 				'lazygit',
+				'TelescopePrompt',
+				'TelescopeResults',
+				'noice',
 			}
 
 			local group = vim.api.nvim_create_augroup('NvimTreesitter', { clear = true })
