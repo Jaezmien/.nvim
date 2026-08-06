@@ -38,3 +38,7 @@ vim.opt.termguicolors = true
 
 -- Show color column
 vim.opt.colorcolumn = "100"
+
+-- Case-insensitive search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true -- enables case-sensitivity when using a uppercase character
