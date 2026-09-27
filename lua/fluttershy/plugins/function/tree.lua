@@ -10,13 +10,22 @@ return {
 					if api.tree.is_visible() then
 						api.tree.close()
 					else
-						api.tree.open()
 						api.tree.find_file()
+						api.tree.open()
 					end
 				end,
 				mode = "n",
 				desc = "[P]roject [V]iew",
-			}
+			},
+			{
+				"<leader>pfv",
+				function()
+					local api = require('nvim-tree.api')
+					api.tree.toggle({ focus = false, find_file = true })
+				end,
+				mode = "n",
+				desc = "[P]roject [F]ocused [V]iew",
+			},
 		},
 		cmd = { "NvimTreeToggle", "NvimTreeOpen" },
 		opts = {
